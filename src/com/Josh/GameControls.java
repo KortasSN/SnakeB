@@ -1,7 +1,10 @@
 package com.Josh;
 
+import java.awt.*;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
+
+import static com.Josh.DrawSnakeGamePanel.displayGameOptions;
 
 public class GameControls implements KeyListener{
 
@@ -17,6 +20,10 @@ public class GameControls implements KeyListener{
         //Hopefully, a DrawSnakeGamePanel object.
 
         DrawSnakeGamePanel panel = (DrawSnakeGamePanel)ev.getComponent();
+
+        if (SnakeGame.getGameStage() == SnakeGame.GAME_OPTIONS) {
+
+        }
 
         if (SnakeGame.getGameStage() == SnakeGame.BEFORE_GAME){
             //Start the game
@@ -52,13 +59,33 @@ public class GameControls implements KeyListener{
         char q = 'q';
         char o = 'o';
         if( keyPressed == o) {
-            SnakeGame.setGameStage(SnakeGame.GAME_OPTIONS);
+            //panel.repaint();
+
+//            componentManager.addOptions(options);
+//
+//            options = new Options();
+//
+//            componentManager.addScore(options);
+
+
+            System.out.println("should go to options");
+            //SnakeGame.setGameStage(SnakeGame.GAME_OPTIONS);
+            //options = new Options(displayGameOptions());
+
+            //SnakeGame.setGameStage(SnakeGame.GAME_OPTIONS);
         }
         if( keyPressed == q){
             System.exit(0);    //quit if user presses the q key.
         }
     }
 
+    private void displayGameOptionstest(KeyEvent ev) {
+        System.out.println("testing");
+
+        DrawSnakeGamePanel panel = (DrawSnakeGamePanel.displayGameOptions(Graphics));
+        panel.repaint();
+
+    }
 
 
 }

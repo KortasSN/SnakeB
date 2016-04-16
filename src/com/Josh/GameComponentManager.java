@@ -8,6 +8,7 @@ public class GameComponentManager {
     private Kibble kibble;
     private Snake snake;
     private Score score;
+    private Options options;
 
     /** Called every clock tick. Tell components to interact/update,
      * manage interactions, update score etc.
@@ -41,6 +42,8 @@ public class GameComponentManager {
         this.score = score;
     }
 
+    public void addOptions(Options options) { this.options = options; }
+
     public Score getScore() {
         return score;
     }
@@ -52,5 +55,7 @@ public class GameComponentManager {
     public Snake getSnake() {
         return snake;
     }
+
+    public Options getOptions() { return options;}
 
 }

@@ -18,11 +18,13 @@ public class DrawSnakeGamePanel extends JPanel {
     private Snake snake;
     private Kibble kibble;
     private Score score;
+    private Options options;
 
     DrawSnakeGamePanel(GameComponentManager components){
         this.snake = components.getSnake();
         this.kibble = components.getKibble();
         this.score = components.getScore();
+        this.options = components.getOptions();
     }
 
     public Dimension getPreferredSize() {
@@ -80,7 +82,8 @@ public class DrawSnakeGamePanel extends JPanel {
         int option = optionScanner.nextInt();
         //String optionChoice;
         switch (option) {
-//        	case 1: changeWindow();
+        	case 1:
+                System.out.println("Change Window");
 //        	break;
 //        	case 2: changeSpeed();
 //        	break;
@@ -89,8 +92,6 @@ public class DrawSnakeGamePanel extends JPanel {
 //        	case 4: break;          //playgame
 
         }
-
-
 
 
     }
