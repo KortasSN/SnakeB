@@ -6,6 +6,8 @@ import java.awt.event.ActionListener;
 import java.awt.event.ItemEvent;
 import java.awt.event.ItemListener;
 
+import static sun.misc.PostVMInitHook.run;
+
 /**
  * Created by Destro on 4/17/2016.
  */
@@ -21,6 +23,7 @@ public class SnakeGUI extends JFrame {
     private JCheckBox fastSpeedCheckBox;
     private JLabel selectSpeedLabel;
     private JButton confirmSpeedButton;
+    private JButton startGameButton;
 
     private boolean wantsSlowSpeed;
     private boolean wantsNormalSpeed;
@@ -113,6 +116,12 @@ public class SnakeGUI extends JFrame {
                 if (wantsFastSpeed == true) {
                     clockInterval = 600;
                 }
+            }
+        });
+        startGameButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+            run();
             }
         });
     }

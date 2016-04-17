@@ -57,13 +57,13 @@ public class GameControls implements KeyListener{
         //keyTyped events are for user typing letters on the keyboard, anything that makes a character display on the screen
         char keyPressed = ev.getKeyChar();
         char q = 'q';
-        char s = 's';
-        if( keyPressed == s) {
-            new Dimension(SnakeGame.xPixelMaxDimension = 401);, SnakeGame.yPixelMaxDimension);
-            = 401;
-            yPixelMaxDimension = 401;
-            squareSize = (xPixelMaxDimension - 1) / 10;
-        }
+//        char s = 's';
+//        if( keyPressed == s) {
+//            new Dimension(SnakeGame.xPixelMaxDimension = 401);, SnakeGame.yPixelMaxDimension);
+//            = 401;
+//            yPixelMaxDimension = 401;
+//            squareSize = (xPixelMaxDimension - 1) / 10;
+//        }
 
             //panel.repaint();
 
@@ -79,7 +79,7 @@ public class GameControls implements KeyListener{
             //options = new Options(displayGameOptions());
 
             //SnakeGame.setGameStage(SnakeGame.GAME_OPTIONS);
-        }
+
         if( keyPressed == q){
             System.exit(0);    //quit if user presses the q key.
         }
