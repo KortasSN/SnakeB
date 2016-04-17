@@ -1,11 +1,22 @@
 package com.Josh;
 
+import java.util.Scanner;
 import java.util.Timer;
 
 import javax.swing.*;
 
 
 public class SnakeGame {
+
+
+    //calculations for changing size//
+    // small  xPixelMaxDimension = 401;
+    // small  yPixelMaxDimension = 401;
+    // small  squareSize = (xPixelMaxDimension - 1) / 10;
+    // medium = no change
+    // large xPixelMaxDimension = 601;
+    // large xPixelMaxDimension = 601;
+    // large squareSize = (xPixelMaxDimension - 1) / 10;
 
     public final static int xPixelMaxDimension = 501;  //Pixels in window. 501 to have 50-pixel squares plus 1 to draw a border on last square
     public final static int yPixelMaxDimension = 501;
@@ -49,6 +60,7 @@ public class SnakeGame {
     public static void main(String[] args) {
         //Schedule a job for the event-dispatching thread:
         //creating and showing this application's GUI.
+
         SwingUtilities.invokeLater(new Runnable() {
             public void run() {
                 initializeGame();
@@ -62,6 +74,7 @@ public class SnakeGame {
         //Create and set up the window.
         snakeFrame = new JFrame();
         snakeFrame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+
 
         snakeFrame.setSize(xPixelMaxDimension, yPixelMaxDimension);
         snakeFrame.setUndecorated(true); //hide title bar
@@ -85,6 +98,9 @@ public class SnakeGame {
     }
 
     private static void initializeGame() {
+
+        //g.drawString("What size game?  small, medium or large?");
+        Scanner sizeScanner = new Scanner(System.in);
 
         //set up score, snake and first kibble
         xSquares = xPixelMaxDimension / squareSize;

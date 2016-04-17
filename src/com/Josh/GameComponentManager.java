@@ -1,5 +1,7 @@
 package com.Josh;
 
+import java.util.Scanner;
+
 /**
  * Created by Clara. Manages game components such as the Snake, Kibble... and their interactions.
  */
@@ -26,7 +28,17 @@ public class GameComponentManager {
     }
 
     public void newGame() {
+        gameOptions();
         snake.reset();
+    }
+
+    private void gameOptions() {
+
+        System.out.println("should go to options");
+        Scanner testScanner = new Scanner(System.in);
+        String testString = testScanner.nextLine();
+                while(testString != "") {
+                                    }
     }
 
 

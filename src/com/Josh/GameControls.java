@@ -57,8 +57,14 @@ public class GameControls implements KeyListener{
         //keyTyped events are for user typing letters on the keyboard, anything that makes a character display on the screen
         char keyPressed = ev.getKeyChar();
         char q = 'q';
-        char o = 'o';
-        if( keyPressed == o) {
+        char s = 's';
+        if( keyPressed == s) {
+            new Dimension(SnakeGame.xPixelMaxDimension = 401);, SnakeGame.yPixelMaxDimension);
+            = 401;
+            yPixelMaxDimension = 401;
+            squareSize = (xPixelMaxDimension - 1) / 10;
+        }
+
             //panel.repaint();
 
 //            componentManager.addOptions(options);
@@ -68,7 +74,7 @@ public class GameControls implements KeyListener{
 //            componentManager.addScore(options);
 
 
-            System.out.println("should go to options");
+
             //SnakeGame.setGameStage(SnakeGame.GAME_OPTIONS);
             //options = new Options(displayGameOptions());
 
@@ -82,8 +88,8 @@ public class GameControls implements KeyListener{
     private void displayGameOptionstest(KeyEvent ev) {
         System.out.println("testing");
 
-        DrawSnakeGamePanel panel = (DrawSnakeGamePanel.displayGameOptions(Graphics));
-        panel.repaint();
+        //DrawSnakeGamePanel panel = (DrawSnakeGamePanel.displayGameOptions(Graphics));
+        //panel.repaint();
 
     }
 
