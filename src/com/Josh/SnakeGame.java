@@ -6,7 +6,7 @@ import java.util.Timer;
 import javax.swing.*;
 
 
-public class SnakeGame {
+public class SnakeGame extends SnakeGUI{
 
 
     //calculations for changing size//
@@ -17,9 +17,9 @@ public class SnakeGame {
     // large xPixelMaxDimension = 601;
     // large xPixelMaxDimension = 601;
     // large squareSize = (xPixelMaxDimension - 1) / 10;
-
-    public final static int xPixelMaxDimension = 501;  //Pixels in window. 501 to have 50-pixel squares plus 1 to draw a border on last square
-    public final static int yPixelMaxDimension = 501;
+//**************probably need to remove next two lines*************//
+    //public final static int xPixelMaxDimension = 501;  //Pixels in window. 501 to have 50-pixel squares plus 1 to draw a border on last square
+    //public final static int yPixelMaxDimension = 501;
 
     public static int xSquares ;
     public static int ySquares ;
@@ -58,6 +58,9 @@ public class SnakeGame {
 
 
     public static void main(String[] args) {
+
+        SnakeGUI gui = new SnakeGUI();
+
         //Schedule a job for the event-dispatching thread:
         //creating and showing this application's GUI.
 
