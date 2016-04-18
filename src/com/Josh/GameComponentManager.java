@@ -56,6 +56,7 @@ public class GameComponentManager {
 
     public void addOptions(Options options) { this.options = options; }
 
+
     public Score getScore() {
         return score;
     }
@@ -69,5 +70,7 @@ public class GameComponentManager {
     }
 
     public Options getOptions() { return options;}
+
+
 
 }

@@ -25,6 +25,7 @@ public class SnakeGUI extends JFrame {
     private JButton confirmSpeedButton;
     private JButton startGameButton;
 
+    //Global boolean variables
     private boolean wantsSlowSpeed;
     private boolean wantsNormalSpeed;
     private boolean wantsFastSpeed;
@@ -39,6 +40,7 @@ public class SnakeGUI extends JFrame {
     public static long clockInterval; // = 500;
 
     protected SnakeGUI() {
+        super("Snake");
         setContentPane(rootPanel);
         pack();
         setVisible(true);
@@ -83,13 +85,13 @@ public class SnakeGUI extends JFrame {
                 }
             }
         });
-        confirmSizeButton.addActionListener(new ActionListener() {
+        confirmSpeedButton.addActionListener(new ActionListener() {   //Confirm the speed selected
             @Override
             public void actionPerformed(ActionEvent e) {
 
             }
         });
-        slowSpeedCheckBox.addItemListener(new ItemListener() {
+        slowSpeedCheckBox.addItemListener(new ItemListener() {    //Check box for SLOW speed
             @Override
             public void itemStateChanged(ItemEvent e) {
                 wantsSlowSpeed = slowSpeedCheckBox.isSelected();
@@ -99,7 +101,7 @@ public class SnakeGUI extends JFrame {
 
             }
         });
-        normalSpeedCheckBox.addItemListener(new ItemListener() {
+        normalSpeedCheckBox.addItemListener(new ItemListener() {  //Check box for NORMAL speed
             @Override
             public void itemStateChanged(ItemEvent e) {
                 wantsNormalSpeed = normalSpeedCheckBox.isSelected();
@@ -109,7 +111,7 @@ public class SnakeGUI extends JFrame {
 
             }
         });
-        fastSpeedCheckBox.addItemListener(new ItemListener() {
+        fastSpeedCheckBox.addItemListener(new ItemListener() {  //Check box for FAST speed
             @Override
             public void itemStateChanged(ItemEvent e) {
                 wantsFastSpeed = fastSpeedCheckBox.isSelected();
@@ -118,10 +120,10 @@ public class SnakeGUI extends JFrame {
                 }
             }
         });
-        startGameButton.addActionListener(new ActionListener() {
+        startGameButton.addActionListener(new ActionListener() {  //confirm button to state set to play
             @Override
             public void actionPerformed(ActionEvent e) {
-            run();
+            //I was unable to determine what to put here to get the game to start//
             }
         });
     }

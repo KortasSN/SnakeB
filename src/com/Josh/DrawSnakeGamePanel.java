@@ -4,7 +4,7 @@ import java.awt.*;
 import java.util.LinkedList;
 import java.util.Scanner;
 
-import javax.swing.JPanel;
+import javax.swing.*;
 
 /** This class responsible for displaying the graphics, so the snake, grid, kibble, instruction text and high score
  *

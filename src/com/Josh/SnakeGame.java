@@ -6,10 +6,16 @@ import java.util.Timer;
 import javax.swing.*;
 
 
-public class SnakeGame extends SnakeGUI{
+public class SnakeGame extends SnakeGUI {
 
 
-    //calculations for changing size//
+//{
+//SnakeGUI gui = new SnakeGUI();
+//
+//    public SnakeGUI getGui() {
+//        return gui;
+//    }
+//calculations for changing size//
     // small  xPixelMaxDimension = 401;
     // small  yPixelMaxDimension = 401;
     // small  squareSize = (xPixelMaxDimension - 1) / 10;
@@ -24,7 +30,7 @@ public class SnakeGame extends SnakeGUI{
     public static int xSquares ;
     public static int ySquares ;
 
-    public final static int squareSize = 50;
+    //public final static int squareSize = 50;
 
     protected static Snake snake ;
     protected static Options options ;
@@ -66,6 +72,7 @@ public class SnakeGame extends SnakeGUI{
 
         SwingUtilities.invokeLater(new Runnable() {
             public void run() {
+
                 initializeGame();
                 createAndShowGUI();
             }
@@ -78,7 +85,7 @@ public class SnakeGame extends SnakeGUI{
         snakeFrame = new JFrame();
         snakeFrame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
 
-
+        //sets the frame the game is played in
         snakeFrame.setSize(xPixelMaxDimension, yPixelMaxDimension);
         snakeFrame.setUndecorated(true); //hide title bar
         snakeFrame.setVisible(true);
@@ -108,7 +115,7 @@ public class SnakeGame extends SnakeGUI{
         //set up score, snake and first kibble
         xSquares = xPixelMaxDimension / squareSize;
         ySquares = yPixelMaxDimension / squareSize;
-
+        //setting the dimensions of the snake
         componentManager = new GameComponentManager();
         snake = new Snake(xSquares, ySquares, squareSize);
         Kibble kibble = new Kibble(snake);
