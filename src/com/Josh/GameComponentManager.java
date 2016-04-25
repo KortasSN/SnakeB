@@ -34,11 +34,13 @@ public class GameComponentManager {
 
     private void gameOptions() {
 
-        System.out.println("should go to options");
-        Scanner testScanner = new Scanner(System.in);
-        String testString = testScanner.nextLine();
-                while(testString != "") {
-                                    }
+        //What will this be for?
+
+//        System.out.println("should go to options");
+//        Scanner testScanner = new Scanner(System.in);
+//        String testString = testScanner.nextLine();
+//                while(testString != "") {
+//                                    }
     }
 
 
