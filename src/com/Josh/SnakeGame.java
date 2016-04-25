@@ -6,7 +6,7 @@ import java.util.Timer;
 import javax.swing.*;
 
 
-public class SnakeGame extends SnakeGUI {
+public class SnakeGame {
 
 
 //{
@@ -24,13 +24,13 @@ public class SnakeGame extends SnakeGUI {
     // large xPixelMaxDimension = 601;
     // large squareSize = (xPixelMaxDimension - 1) / 10;
 //**************probably need to remove next two lines*************//
-    //public final static int xPixelMaxDimension = 501;  //Pixels in window. 501 to have 50-pixel squares plus 1 to draw a border on last square
-    //public final static int yPixelMaxDimension = 501;
+    public  static int xPixelMaxDimension = 501;  //Pixels in window. 501 to have 50-pixel squares plus 1 to draw a border on last square
+    public  static int yPixelMaxDimension = 501;
 
     public static int xSquares ;
     public static int ySquares ;
 
-    //public final static int squareSize = 50;
+    public  static int squareSize = 50;
 
     protected static Snake snake ;
     protected static Options options ;
@@ -51,7 +51,7 @@ public class SnakeGame extends SnakeGUI {
     private static int gameStage = BEFORE_GAME;  //use this to figure out what should be happening.
     //Other classes like Snake and DrawSnakeGamePanel will query this, and change its value
 
-    //protected static long clockInterval = 500; //controls game speed
+    protected static long clockInterval = 500; //controls game speed
     //Every time the clock ticks, the snake moves
     //This is the time between clock ticks, in milliseconds
     //1000 milliseconds = 1 second.
@@ -65,7 +65,12 @@ public class SnakeGame extends SnakeGUI {
 
     public static void main(String[] args) {
 
-        SnakeGUI gui = new SnakeGUI();
+        SnakeGUI gui = new SnakeGUI(new SnakeGame());
+
+    }
+
+
+    public void startGame() {
 
         //Schedule a job for the event-dispatching thread:
         //creating and showing this application's GUI.
@@ -99,6 +104,7 @@ public class SnakeGame extends SnakeGUI {
         snakeFrame.add(snakePanel);
 
         //Add listeners to listen for key presses
+        System.out.println("Add listeners");
         snakePanel.addKeyListener(new GameControls());
         snakePanel.addKeyListener(new SnakeControls(snake));
 
