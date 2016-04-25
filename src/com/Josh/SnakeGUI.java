@@ -34,13 +34,16 @@ public class SnakeGUI extends JFrame {
     private boolean wantsLargeSize;
 
 
-    public static int xPixelMaxDimension; // = 501;  //Pixels in window. 501 to have 50-pixel squares plus 1 to draw a border on last square
+  /*  public static int xPixelMaxDimension; // = 501;  //Pixels in window. 501 to have 50-pixel squares plus 1 to draw a border on last square
     public static int yPixelMaxDimension; // = 501;
     public static int squareSize; // = 50;
     public static long clockInterval; // = 500;
+*/
+    private SnakeGame snakeGame;
 
-    protected SnakeGUI() {
+    protected SnakeGUI(SnakeGame game) {
         super("Snake");
+        this.snakeGame = game;
         setContentPane(rootPanel);
         pack();
         setVisible(true);
@@ -57,9 +60,9 @@ public class SnakeGUI extends JFrame {
             public void itemStateChanged(ItemEvent e) {
                 wantsSmallSize = smallSizeCheckBox.isSelected();
                 if (wantsSmallSize == true) {
-                    xPixelMaxDimension = 401;
-                    yPixelMaxDimension = 401;
-                    squareSize = (xPixelMaxDimension -1) / 10;
+                    snakeGame.xPixelMaxDimension = 401;
+                    snakeGame.yPixelMaxDimension = 401;
+                    snakeGame.squareSize = (snakeGame.xPixelMaxDimension -1) / 10;
                 }
             }
         });
@@ -68,9 +71,9 @@ public class SnakeGUI extends JFrame {
             public void itemStateChanged(ItemEvent e) {
                 wantsNormalSize = normalSizeCheckBox.isSelected();
                 if (wantsNormalSize == true) {
-                    xPixelMaxDimension = 501;
-                    yPixelMaxDimension = 501;
-                    squareSize = (xPixelMaxDimension -1) / 10;
+                    snakeGame.xPixelMaxDimension = 501;
+                    snakeGame.yPixelMaxDimension = 501;
+                    snakeGame.squareSize = (snakeGame.xPixelMaxDimension -1) / 10;
                 }
             }
         });
@@ -79,9 +82,9 @@ public class SnakeGUI extends JFrame {
             public void itemStateChanged(ItemEvent e) {
                 wantsLargeSize = largeSizeCheckBox.isSelected();
                 if (wantsLargeSize == true) {
-                    xPixelMaxDimension = 601;
-                    yPixelMaxDimension = 601;
-                    squareSize = (xPixelMaxDimension -1) / 10;
+                    snakeGame.xPixelMaxDimension = 601;
+                    snakeGame.yPixelMaxDimension = 601;
+                    snakeGame.squareSize = (snakeGame.xPixelMaxDimension -1) / 10;
                 }
             }
         });
@@ -96,7 +99,7 @@ public class SnakeGUI extends JFrame {
             public void itemStateChanged(ItemEvent e) {
                 wantsSlowSpeed = slowSpeedCheckBox.isSelected();
                 if (wantsSlowSpeed == true) {
-                    clockInterval = 400;
+                    snakeGame.clockInterval = 400;
                 }
 
             }
@@ -106,7 +109,7 @@ public class SnakeGUI extends JFrame {
             public void itemStateChanged(ItemEvent e) {
                 wantsNormalSpeed = normalSpeedCheckBox.isSelected();
                 if (wantsNormalSpeed == true) {
-                    clockInterval = 500;
+                    snakeGame.clockInterval = 500;
                 }
 
             }
@@ -116,7 +119,7 @@ public class SnakeGUI extends JFrame {
             public void itemStateChanged(ItemEvent e) {
                 wantsFastSpeed = fastSpeedCheckBox.isSelected();
                 if (wantsFastSpeed == true) {
-                    clockInterval = 600;
+                    snakeGame.clockInterval = 600;
                 }
             }
         });
@@ -124,6 +127,11 @@ public class SnakeGUI extends JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {
             //I was unable to determine what to put here to get the game to start//
+
+                //send message to SnakeGame, tell it to start
+                snakeGame.startGame();
+                dispose();
+
             }
         });
     }
